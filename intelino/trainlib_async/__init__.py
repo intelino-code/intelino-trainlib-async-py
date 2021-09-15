@@ -6,7 +6,7 @@
 # THE SOFTWARE, YOU AGREE TO THE TERMS OF SUCH LICENSE AGREEMENT.
 
 """
-There are two flavors of the **intelino trainlib**:
+There are two variants of the **intelino trainlib**:
 
 - Asynchronous library ``intelino-trainlib-async`` that uses the import
   ``intelino.trainlib_async``.
@@ -21,4 +21,4 @@ from .train import Train
 from .train_scanner import TrainScanner
 
 
-__version__ = "0.1.0"
+__version__ = "1.0.0"

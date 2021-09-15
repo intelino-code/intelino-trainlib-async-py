@@ -1,3 +1,7 @@
+wheel
+twine
+build
+pylint
 black>=21.8b0
 bump2version>=1.0.1
 aioconsole==0.3.2

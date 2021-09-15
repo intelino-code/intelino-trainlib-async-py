@@ -7,9 +7,10 @@
 [![PyPI - Downloads](https://img.shields.io/pypi/dw/intelino-trainlib-async.svg)](https://pypistats.org/packages/intelino-trainlib-async)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-An asynchronous Python library (SDK) for interacting with the intelino smart train.
+Asynchronous Python library (SDK) for interacting with the intelino smart train.
 
-![](./docs/source/images/intelino-multi-train.jpg)
+![intelino smart trains][main-img]
+
 
 ## Overview
 
@@ -46,3 +47,5 @@ python3 -m pip install -r requirements.txt
 python3 -m pip install -r requirements-dev.txt
 python3 -m pip install -e .
 ```
+
+[main-img]: ./docs/source/images/intelino-multi-train.jpg "intelino smart trains"
