@@ -1,7 +1,7 @@
 
 # intelino-trainlib-async-py
 
-[![Docs](https://readthedocs.org/projects/pip/badge/?version=stable)](https://intelino-trainlib-async-py.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/intelino-trainlib-async-py/badge/?version=latest)](https://intelino-trainlib-async-py.readthedocs.io/en/latest/?badge=latest)
 [![PyPI](https://img.shields.io/pypi/v/intelino-trainlib-async.svg)](https://pypi.org/project/intelino-trainlib-async/)
 [![PyPI](https://img.shields.io/pypi/pyversions/intelino-trainlib-async.svg)](https://pypi.org/project/intelino-trainlib-async/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dw/intelino-trainlib-async.svg)](https://pypistats.org/packages/intelino-trainlib-async)

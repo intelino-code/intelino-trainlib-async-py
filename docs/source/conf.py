@@ -4,7 +4,6 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-from intelino.trainlib_async import __version__ as trainlib_version
 import sphinx_rtd_theme
 
 # -- Path setup --------------------------------------------------------------
@@ -26,7 +25,7 @@ copyright = u"2021, intelino"
 author = u"intelino"
 
 # The full version, including alpha/beta/rc tags
-release = trainlib_version
+release = "0.1.0"
 
 
 # -- General configuration ---------------------------------------------------
