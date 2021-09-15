@@ -4,15 +4,15 @@ Welcome to the API Reference Guide for **intelino-trainlib-async-py** - the **as
 
 .. image:: images/intelino-multi-train.jpg
 
+.. image:: https://readthedocs.org/projects/intelino-trainlib-async-py/badge/?version=latest
+   :target: https://intelino-trainlib-async-py.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
 .. image:: https://img.shields.io/pypi/v/intelino-trainlib-async.svg
    :target: https://pypi.python.org/pypi/intelino-trainlib-async
 
 .. image:: https://img.shields.io/pypi/pyversions/intelino-trainlib-async.svg
    :target: https://pypi.python.org/pypi/intelino-trainlib-async
-
-.. image:: https://readthedocs.org/projects/intelino-trainlib-async-py/badge/?version=latest
-   :target: https://intelino-trainlib-async-py.readthedocs.io/en/latest/?badge=latest
-   :alt: Documentation Status
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
