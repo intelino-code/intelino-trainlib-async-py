@@ -133,7 +133,7 @@ class MessageBuilder:
             return cls._event_snap_detected(event, packet)
 
         elif event.id == TrainMsgEventSplitDecision.event_id:
-            return cls._event_switch_decision(event, packet)
+            return cls._event_split_decision(event, packet)
 
         return TrainMsgEventUnknown(
             raw_packet=packet,
@@ -323,11 +323,11 @@ class MessageBuilder:
         )
 
     @classmethod
-    def _event_switch_decision(cls, event: EventCommonData, packet: "TrainBlePacket"):
-        (decision,) = cls._unpack(">BL", packet, cls.EVENT_PAYLOAD_OFFSET)
+    def _event_split_decision(cls, event: EventCommonData, packet: "TrainBlePacket"):
+        data = cls._unpack(">BL", packet, cls.EVENT_PAYLOAD_OFFSET)
 
         return TrainMsgEventSplitDecision(
             raw_packet=packet,
             timestamp_ms=event.timestamp_ms,
-            decision=SteeringDecision(decision),
+            decision=SteeringDecision(data[0]),
         )
