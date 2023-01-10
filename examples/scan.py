@@ -16,8 +16,8 @@ def list_devices(title: str, devices: List[BLEDevice]) -> None:
 async def scan(timeout: float) -> None:
     devices = await BleakScanner.discover(timeout)
 
-    trains = list(filter(lambda d: d.name.startswith("intelino"), devices))
-    others = list(filter(lambda d: not d.name.startswith("intelino"), devices))
+    trains = list(filter(lambda d: str(d.name).startswith("intelino"), devices))
+    others = list(filter(lambda d: not str(d.name).startswith("intelino"), devices))
 
     list_devices("Trains", trains)
     print()
