@@ -4,6 +4,8 @@ import aioconsole
 from intelino.trainlib_async import (
     TrainScanner,
     Train,
+)
+from intelino.trainlib_async.messages import (
     TrainMsg,
     TrainMsgEventFrontColorChanged,
     TrainMsgEventBackColorChanged,
