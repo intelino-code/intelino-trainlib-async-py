@@ -8,6 +8,8 @@ from typing import Any, Callable, Coroutine, List
 from intelino.trainlib_async import (
     TrainScanner,
     Train,
+)
+from intelino.trainlib_async.messages import (
     TrainMsg,
     TrainMsgEventFrontColorChanged,
 )

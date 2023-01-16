@@ -9,7 +9,8 @@ import asyncio
 import aioconsole
 from rx import operators as ops
 from rx.scheduler.eventloop import AsyncIOScheduler
-from intelino.trainlib_async import TrainScanner, Train, TrainMsgMovement
+from intelino.trainlib_async import TrainScanner, Train
+from intelino.trainlib_async.messages import TrainMsgMovement
 from intelino.trainlib_async.helpers import AsyncObserver
 
 

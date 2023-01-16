@@ -8,6 +8,8 @@ from rx.subject.subject import Subject
 from intelino.trainlib_async import (
     TrainScanner,
     Train,
+)
+from intelino.trainlib_async.messages import (
     TrainMsg,
     TrainMsgEventFrontColorChanged,
 )

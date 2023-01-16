@@ -22,6 +22,8 @@ from typing import List, NamedTuple
 from intelino.trainlib_async import (
     TrainScanner,
     Train,
+)
+from intelino.trainlib_async.messages import (
     TrainMsgEventFrontColorChanged,
     TrainMsgMovement,
 )

@@ -1,7 +1,8 @@
 """Data stream example (1): Print speed every 5 seconds."""
 import asyncio
 import aioconsole
-from intelino.trainlib_async import TrainScanner, Train, TrainMsgMovement
+from intelino.trainlib_async import TrainScanner, Train
+from intelino.trainlib_async.messages import TrainMsgMovement
 from intelino.trainlib_async.helpers import AsyncObserver
 
 
