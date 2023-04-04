@@ -21,4 +21,4 @@ from .train import Train
 from .train_scanner import TrainScanner
 
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"

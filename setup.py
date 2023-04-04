@@ -19,7 +19,7 @@ REQUIREMENTS = [
 
 setup(
     name="intelino-trainlib-async",
-    version="1.0.1",
+    version="1.0.2",
     description="Asynchronous Python library (SDK) for interacting with the intelino smart train.",
     long_description=long_description,
     long_description_content_type="text/markdown",
