@@ -28,7 +28,7 @@ class TrainBleDevice:
         self.__writes: Subject[TrainBlePacket, TrainBlePacket] = Subject()
 
         driver.set_response_listener(self.__notifications.on_next)
-        driver.set_disconnect_listener(lambda: self.__connection_status.on_next(False))
+        driver.set_disconnect_listener(lambda _: self.__connection_status.on_next(False))
 
     @property
     def id(self) -> str:
