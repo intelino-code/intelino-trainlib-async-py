@@ -10,9 +10,10 @@
 """BLE scanning utility to find nearby intelino trains."""
 
 import asyncio
-from typing import List
+from typing import List, Dict, Tuple
 from bleak import BleakScanner
 from bleak.backends.device import BLEDevice
+from bleak.backends.scanner import AdvertisementData
 from intelino.trainlib_async import TrainScanner, Train
 
 
@@ -62,17 +63,17 @@ async def train_scan(timeout: float):
         print("No trains found.")
 
 
-def list_devices(title: str, devices: List[BLEDevice]) -> None:
+def list_devices(title: str, devices: List[Tuple[BLEDevice, AdvertisementData]]) -> None:
     print(f"{title} ({len(devices)}):")
-    for d in devices:
-        print(f"{d.address} : {d.name} (RSSI {d.rssi})")
+    for dev, adv_data in devices:
+        print(f"{dev.address} : {dev.name} (RSSI {adv_data.rssi})")
 
 
 async def general_scan(timeout: float) -> None:
-    devices = await BleakScanner.discover(timeout)
+    devices: Dict[str, Tuple[BLEDevice, AdvertisementData]] = await BleakScanner.discover(timeout, return_adv=True)
 
-    trains = list(filter(lambda d: str(d.name).startswith("intelino"), devices))
-    others = list(filter(lambda d: not str(d.name).startswith("intelino"), devices))
+    trains = list(filter(lambda t: str(t[0].name).startswith("intelino"), devices.values()))
+    others = list(filter(lambda t: not str(t[0].name).startswith("intelino"), devices.values()))
 
     list_devices("Trains", trains)
     print()
