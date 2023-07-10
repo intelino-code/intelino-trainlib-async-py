@@ -29,15 +29,20 @@ class BleakDriver(TrainBleDriver):
         else:
             self.__name: str = name if name else "intelino J-1"
 
-        self.__bleak_client: BleakClient = BleakClient(address_or_ble_device, **kwargs)
+        self.__bleak_client: BleakClient = BleakClient(
+            address_or_ble_device,
+            disconnected_callback=self._on_disconnected,
+            **kwargs
+        )
         self.__response_callback: Union[Callable[[TrainBlePacket], None], None] = None
+        self._disconnected_callback = None
 
     async def connect(self, **kwargs) -> bool:
         connected = await self.__bleak_client.connect(**kwargs)
 
         if connected:
 
-            def callback(_: int, data: bytearray):
+            def callback(_, data: bytearray):
                 if self.__response_callback:
                     self.__response_callback(TrainBlePacket(data))
 
@@ -46,6 +51,10 @@ class BleakDriver(TrainBleDriver):
             )
 
         return connected and self.__bleak_client.is_connected
+
+    def _on_disconnected(self, *args):
+        if self._disconnected_callback:
+            self._disconnected_callback(*args)
 
     async def disconnect(self) -> bool:
         if self.__bleak_client.is_connected:
@@ -86,8 +95,8 @@ class BleakDriver(TrainBleDriver):
 
             self.__response_callback = wrapped_callback
 
-        elif is_not_coroutine_function((callback)):
+        elif is_not_coroutine_function(callback):
             self.__response_callback = callback
 
     def set_disconnect_listener(self, callback: Callable[[], None]) -> None:
-        self.__bleak_client.set_disconnected_callback(lambda _: callback())
+        self._disconnected_callback = callback
