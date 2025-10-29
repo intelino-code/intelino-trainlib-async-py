@@ -4,7 +4,8 @@ import logging
 import time
 from bleak import BleakScanner
 from bleak.exc import BleakError
-from intelino.trainlib_async import Train, TrainMsg
+from intelino.trainlib_async import Train
+from intelino.trainlib_async.messages import TrainMsg
 from intelino.trainlib_async.train_ble_device import TrainBleDevice
 from intelino.trainlib_async.drivers.bleak_driver import BleakDriver
 
