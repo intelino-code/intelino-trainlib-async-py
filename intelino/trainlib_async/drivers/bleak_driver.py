@@ -38,10 +38,9 @@ class BleakDriver(TrainBleDriver):
         self._disconnected_callback = None
 
     async def connect(self, **kwargs) -> bool:
-        connected = await self.__bleak_client.connect(**kwargs)
+        await self.__bleak_client.connect(**kwargs)
 
-        if connected:
-
+        if self.__bleak_client.is_connected:
             def callback(_, data: bytearray):
                 if self.__response_callback:
                     self.__response_callback(TrainBlePacket(data))
@@ -50,7 +49,7 @@ class BleakDriver(TrainBleDriver):
                 self.RESPONSE_CHARACTERISTIC, callback
             )
 
-        return connected and self.__bleak_client.is_connected
+        return self.__bleak_client.is_connected
 
     def _on_disconnected(self, *args):
         if self._disconnected_callback:

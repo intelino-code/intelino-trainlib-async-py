@@ -48,4 +48,6 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m pip install -e .
 ```
 
+To bump the version run e.g. `bump2version patch`.
+
 [main-img]: ./docs/source/images/intelino-multi-train.jpg "intelino smart trains"
